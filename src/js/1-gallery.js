@@ -67,30 +67,20 @@ const images = [
 const galleryContainer = document.querySelector(".gallery");
 
 const createMarkup = images.map(({ preview, original, description }) => {
-    return(`
+    return (`
         <li class="gallery-item">
             <a class="gallery-link" href=${original}>
-                <img class="gallery-image" src=${preview} data-source=${original}
-                    alt=${description} />
+                <img class="gallery-image" src=${preview} alt=${description} />
             </a>
         </li>`)
 }).join('');
-galleryContainer.insertAdjacentHTML("beforeend", createMarkup)
+        
+galleryContainer.insertAdjacentHTML("beforeend", createMarkup);
 
-const imgClick = (event) => {
-    event.preventDefault();
-    if (!event.target.classList.contains("gallery-image")) {
-        return;
-   }
-//    const instance = basicLightbox.create(`
-//	<div class="modal">
-//        <img src=${event.target.dataset.source} alt=${event.target.alt}
-//    </div>
-//    `);
-//    instance.show();
-    
-    var lightbox = new SimpleLightbox('.gallery a', {});
-    
-};
-galleryContainer.addEventListener("click", imgClick);
+import { SimpleLightbox } from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
+
+
+var lightbox = new SimpleLightbox('.gallery a', {});
+
 
