@@ -48,9 +48,38 @@
 }
 
 .feedback-form {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #2E2F42;
   display: flex;
   flex-wrap: wrap;
+  gap: 16px;
   width: 408px;
   padding: 24px;
+  
+}
+
+label {
+  display: flex;
+  flex-wrap: wrap;
   gap: 16px;
+  width: 360px;
+}
+
+input,
+textarea {
+  width: 360px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+}
+
+button {
+  width: 95px;
+  height: 40px;
+  color: #FFFFFF;
+  background-color: #4E75FF;
+  border: #4E75FF;
+  border-radius: 8px;
+  font-size: 16px;
 }
