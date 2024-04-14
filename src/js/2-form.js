@@ -4,8 +4,10 @@ const formValue = {};
 
 const input = form.elements.email;
 const textarea = form.elements.message;
-if (localStorage.getItem(localStorageKey)!== null) {
+
+if ((JSON.parse(localStorage.getItem(localStorageKey))).email !== undefined) {
     input.value = (JSON.parse(localStorage.getItem(localStorageKey))).email;
+} if ((JSON.parse(localStorage.getItem(localStorageKey))).message !== undefined) {
     textarea.value = (JSON.parse(localStorage.getItem(localStorageKey))).message;
 };
 
