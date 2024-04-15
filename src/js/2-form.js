@@ -5,11 +5,18 @@ const formValue = {};
 const input = form.elements.email;
 const textarea = form.elements.message;
 
-if ((JSON.parse(localStorage.getItem(localStorageKey))).email !== undefined) {
+
+if (JSON.parse(localStorage.getItem(localStorageKey)) === null) {
+}
+else if (JSON.parse(localStorage.getItem(localStorageKey)).email !== undefined && JSON.parse(localStorage.getItem(localStorageKey)).message !== undefined) {
     input.value = (JSON.parse(localStorage.getItem(localStorageKey))).email;
-} if ((JSON.parse(localStorage.getItem(localStorageKey))).message !== undefined) {
     textarea.value = (JSON.parse(localStorage.getItem(localStorageKey))).message;
+} else if (JSON.parse(localStorage.getItem(localStorageKey)).email === undefined) {
+    textarea.value = (JSON.parse(localStorage.getItem(localStorageKey))).message;
+} else {
+    input.value = (JSON.parse(localStorage.getItem(localStorageKey))).email;
 };
+
 
 form.addEventListener("input", (ivent) => {
     
@@ -17,8 +24,6 @@ form.addEventListener("input", (ivent) => {
     localStorage.setItem(localStorageKey, JSON.stringify(formValue));
     
 });
-
-
 
 form.addEventListener("submit", (ivent) => {
     ivent.preventDefault();
