@@ -1,4 +1,4 @@
-import { SimpleLightbox } from "simplelightbox";
+import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 
@@ -83,7 +83,7 @@ galleryContainer.insertAdjacentHTML("beforeend", createMarkup);
 
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: "alt",
-  captionsDelav: 250
+  captionsDelay: 250
 });
 
 
