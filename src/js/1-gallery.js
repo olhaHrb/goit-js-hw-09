@@ -82,7 +82,6 @@ const createMarkup = images.map(({ preview, original, description }) => {
 galleryContainer.insertAdjacentHTML("beforeend", createMarkup);
 
 const lightbox = new SimpleLightbox('.gallery a', {
-  overlayOpacity: .8,
   captionsData: "alt",
   captionsDelav: 250
 });
