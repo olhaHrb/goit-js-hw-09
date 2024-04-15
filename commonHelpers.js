@@ -3,5 +3,5 @@ import"./assets/modulepreload-polyfill-3cfb730f.js";/* empty css                
             <a class="gallery-link" href=${p}>
                 <img class="gallery-image" src=${o} alt=${a} />
             </a>
-        </li>`).join("");e.insertAdjacentHTML("beforeend",n);new i.SimpleLightbox(".gallery a",{overlayOpacity:.8,captionsData:"alt",captionsDelav:250});
+        </li>`).join("");e.insertAdjacentHTML("beforeend",n);new i.SimpleLightbox(".gallery a",{captionsData:"alt",captionsDelav:250});
 //# sourceMappingURL=commonHelpers.js.map
