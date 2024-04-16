@@ -10,11 +10,15 @@ if (JSON.parse(localStorage.getItem(localStorageKey)) === null) {
 }
 else if (JSON.parse(localStorage.getItem(localStorageKey)).email !== undefined && JSON.parse(localStorage.getItem(localStorageKey)).message !== undefined) {
     input.value = (JSON.parse(localStorage.getItem(localStorageKey))).email;
+    formValue.email = (JSON.parse(localStorage.getItem(localStorageKey))).email;
     textarea.value = (JSON.parse(localStorage.getItem(localStorageKey))).message;
+    formValue.message = (JSON.parse(localStorage.getItem(localStorageKey))).message;
 } else if (JSON.parse(localStorage.getItem(localStorageKey)).email === undefined) {
     textarea.value = (JSON.parse(localStorage.getItem(localStorageKey))).message;
+    formValue.message = (JSON.parse(localStorage.getItem(localStorageKey))).message;
 } else {
     input.value = (JSON.parse(localStorage.getItem(localStorageKey))).email;
+    formValue.email = (JSON.parse(localStorage.getItem(localStorageKey))).email;
 };
 
 
@@ -27,7 +31,13 @@ form.addEventListener("input", (ivent) => {
 
 form.addEventListener("submit", (ivent) => {
     ivent.preventDefault();
-    console.log(formValue);
-    localStorage.removeItem(localStorageKey);
-    form.reset();
+    
+    if (formValue.email === undefined || formValue.message === undefined) {
+        alert("All fields must be filled!");
+    
+    } else {
+        console.log(formValue);
+        localStorage.removeItem(localStorageKey);
+        form.reset();
+    } 
 });
