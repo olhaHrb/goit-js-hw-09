@@ -39,5 +39,7 @@ form.addEventListener("submit", (ivent) => {
         console.log(formValue);
         localStorage.removeItem(localStorageKey);
         form.reset();
+        delete formValue.email;
+        delete formValue.message;
     } 
 });
